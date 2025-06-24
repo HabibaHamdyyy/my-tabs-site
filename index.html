@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabbed Interface</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; }
+    .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+    .tab { padding: 10px 15px; background: #f0f0f0; cursor: pointer; border-radius: 5px; transition: 0.3s; }
+    .tab:hover { background: #ccc; }
+    .content { padding: 10px; border: 1px solid #ddd; border-radius: 5px; min-height: 150px; }
+  </style>
+</head>
+<body>
+
+<h2>مرحبًا بك في الصفحة</h2>
+<div class="tabs">
+  <div class="tab" onclick="window.open('SiliconWaha.pdf', '_blank')">تاب 1</div>
+  <div class="tab" onclick="showContent(1)">تاب 2</div>
+  <div class="tab" onclick="showContent(2)">تاب 3</div>
+  <div class="tab" onclick="showContent(3)">تاب 4</div>
+</div>
+
+<div id="content" class="content">
+  اختر أي تاب لعرض المحتوى.
+</div>
+
+<script>
+  function showContent(tab) {
+    let html = "";
+    if (tab === 1) {
+      html = `
+        <h3>مخطط المباني</h3>
+        <a href="map-layout.pdf" target="_blank">عرض المخطط (PDF)</a><br><br>
+        <h3>الموقع على الخريطة</h3>
+        <a href="https://maps.app.goo.gl/3V9tLTfM1K3f4Duk9?g_st=aw" target="_blank">
+          فتح الموقع في خرائط Google
+        </a>
+      `;
+    } else if (tab === 2) {
+      html = "محتوى التاب الثالث.";
+    } else if (tab === 3) {
+      html = "محتوى التاب الرابع.";
+    } else {
+      html = "اختر أي تاب لعرض المحتوى.";
+    }
+    document.getElementById('content').innerHTML = html;
+  }
+</script>
+
+</body>
+</html>
