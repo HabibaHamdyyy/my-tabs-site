@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabbed Interface</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; }
+    .tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tab { padding: 10px 15px; background: #f0f0f0; cursor: pointer; border-radius: 5px; transition: 0.3s; }
+    .tab:hover { background: #ccc; }
+    .content { padding: 10px; border: 1px solid #ddd; border-radius: 5px; min-height: 150px; }
+  </style>
+</head>
+<body>
+
+<h2>أهلاً بك في دليل الزوار الرقمي للقرية الذكية</h2>
+<div class="tabs">
+  <div class="tab" onclick="openPDF('1y8GtwI2ojuySOOxjP-l0WpSLrmI24vvL')">من نحن؟</div>
+  <div class="tab" onclick="showContent(1)">كيف أصل وكيف أتنقل؟</div>
+  <div class="tab" onclick="openPDF('1lUo-OOEN0My_rQLiTcVOuj-cN8nH0u9L')">لراحتك التزم بالآتي</div>
+  <div class="tab" onclick="openPDF('1s2vxj8srPoThuRAJWqsZsGXjFBuftG46')">لسلامتك اتبع الآتي</div>
+</div>
+
+<div id="content" class="content">
+  ابدأ في تصفح دليل القرية الذكية من خلال اختيار ما يناسبك.
+</div>
+
+<script>
+  function showContent(tab) {
+    let html = "";
+    if (tab === 1) {
+      html = `
+        <h3>الموقع على الخريطة</h3>
+        <a href="https://maps.app.goo.gl/3V9tLTfM1K3f4Duk9?g_st=aw" target="_blank">
+          فتح الموقع في خرائط Google 
+        </a>
+        <h3>مخطط المباني</h3>
+        <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?export=download&id=1cDa8ezhiewIt2YXEPXdn-3g4Aqsbk3zU" target="_blank">عرض المخطط</a><br><br>
+      `;
+    } else {
+      html = "ابدأ تصفح دليل القرية الذكية من خلال اختيار ما يناسبك.";
+    }
+    document.getElementById('content').innerHTML = html;
+  }
+
+  function openPDF(fileId) {
+    const viewerUrl = "https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?export=download&id=" + fileId;
+    window.open(viewerUrl, "_blank");
+  }
+</script>
+
+</body>
+</html>
