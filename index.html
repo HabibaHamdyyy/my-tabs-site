@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<link rel="icon" href="images/Icon.png" type="image/png">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta property="og:title" content="SILICON WAHA - دليل الزوار">
+  <meta property="og:description" content="دليلك داخل منطقة واحات السيليكون التكنولوجية">
+  <meta property="og:image" content="https://habibahamdyyy.github.io/my-tabs-site/images/Icon.png">
+  <meta property="og:url" content="https://habibahamdyyy.github.io/my-tabs-site/">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SILICON WAHA - دليل الزوار</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+</head>
+
+<body class="page-enter">
+
+  <h1 class="logo-text" onclick="window.location.href='https://siliconwaha.com/'">SILICON WAHA</h1>
+
+  <h2 class="intro">
+    مرحبًا بك في المنطقة التكنولوجية ببرج العرب، إحدى مناطق شركة واحات السيليكون للمناطق التكنولوجية.
+    يهدف هذا الدليل الإرشادي إلى تسهيل تجربتك داخل المنطقة وتوفير كل ما تحتاجه من معلومات لضمان أداء مهامك بسلاسة وراحة.
+    <br>
+    نرجو الاطلاع على التعليمات والخدمات المتاحة لتجربة عملية آمنة وفعالة. <br>
+    نتمنى لك وقتًا مثمرًا ونجاحًا دائمًا.
+  </h2>
+
+  <div class="buttons">
+    <button class="button button1" onclick="openPDF('SiliconWaha.pdf')">
+      <img src="images/LOGO.jpg" alt="من نحن؟">
+      <div class="button-label">من نحن؟</div>
+    </button>
+    <div class="button-with-content">
+      <button class="button button2" data-tab="2" onclick="showContent(2)">
+        <img src="images/خريطه.svg" alt="الوصول والتنقل">
+        <div class="button-label">الموقع و مخطط المنطقة</div>
+      </button>
+      <div id="content" class="content" style="display: none;">
+        <button onclick="document.getElementById('content').style.display='none'">× إغلاق</button>
+      </div>
+    </div>
+
+    <button class="button button3" onclick="openPDF('لراحتك.pdf')">
+      <img src="images/لراحتك.webp" alt="لراحتك">
+      <div class="button-label">لراحتك التزم بالآتي</div>
+    </button>
+    <button class="button button4" onclick="openPDF('خطة الطوارئ.pdf')">
+      <img src="images/لسلامتك.svg" alt="لسلامتك">
+      <div class="button-label">لسلامتك اتبع الآتي</div>
+    </button>
+    <button class="button button5"
+      onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdHu_Q73fNk7fatEz7MENqD977NUHGOJeVYoPulLnyC25w-7w/viewform?usp=dialog', '_blank')">
+      <img src="images/feedback.jpeg" alt="شكاوي و مقترحات">
+      <div class="button-label">شكاوي و مقترحات</div>
+    </button>
+  </div>
+  
+  <div class="download-box">
+    <h3>قم بتحميل تطبيق Silicon Waha</h3>
+    <div class="badges">
+      <!-- Google Play Badge -->
+      <a href="https://play.google.com/store/apps/details?id=com.codemorning.siliconwaha" target="_blank"
+        class="badge google-play">
+        <img src="images/google-play-badge.svg" alt="Get it on Google Play" class="badge-img">
+      </a>
+
+      <!-- App Store Badge -->
+      <a href="https://apps.apple.com/eg/app/silicon-waha/id6744442120" target="_blank" class="badge app-store">
+        <img src="images/appstore-badge.svg" alt="Download on App Store" class="badge-img">
+      </a>
+    </div>
+  </div>
+
+</body>
+
+</html>

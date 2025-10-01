@@ -1,0 +1,217 @@
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Cairo', sans-serif;
+  padding: 40px 20px;
+  direction: rtl;
+  background: #003b6f;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Logo ===== */
+.logo-text {
+  font-size: 100px; /* كبير على اللابتوب */
+  font-weight: bold;
+  cursor: pointer;
+  background-image: url('images/building.png');
+  background-size: contain;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fadeInUp 1s ease forwards;
+  line-height: 1ز1;
+}
+
+/* ===== Intro Text ===== */
+h2.intro {
+  font-size: 20px;
+  font-weight: normal;
+  color: #f0f0f0;
+  max-width: 750px;
+  margin: 20px auto 80px auto;
+  line-height: 1.6em;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 160px;
+  padding: 12px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  background: #ddd;
+}
+
+.button img {
+  width: 60%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 7px;
+}
+
+.button-label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #002f5c;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* ===== Buttons Animation Delay ===== */
+.button1 { animation-delay: 0.2s; }
+.button2 { animation-delay: 0.4s; }
+.button3 { animation-delay: 0.6s; }
+.button4 { animation-delay: 0.8s; }
+.button5 { animation-delay: 1s; }
+
+/* ===== Content Section ===== */
+.button-with-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#content {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease; /* حركة سلسة */
+}
+
+#content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Transport Cards ===== */
+.transport-card {
+  font-family: 'Cairo', sans-serif;
+  color: #002f5c;
+  width: 200px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  transform: translateY(20px) scale(0.9);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.transport-card.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.transport-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Download Box ===== */
+.download-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 10px;
+  margin: 40px auto 0;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.download-box h3 {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.download-box .badges {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.download-box a img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.download-box a img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Responsive ===== */
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .logo-text { font-size: 70px; }
+  h2.intro { font-size: 18px; margin-bottom: 60px; }
+
+  .buttons { gap: 20px; }
+  .button { width: 140px; padding: 10px; font-size: 16px; }
+  .button img { width: 55%; height: 60px; }
+  .button-label { font-size: 16px; }
+  .download-box h3 { font-size: 20px; }
+  .download-box a img { height: 55px; }
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  body { padding: 10px 2px; }
+  .logo-text { font-size: 50px; }
+  h2.intro { font-size: 16px; line-height: 1.4em; margin-bottom: 40px; }
+
+  .buttons { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .button { width: 120px; padding: 8px; font-size: 14px; }
+  .button img { width: 60%; height: 50px; }
+  .button-label { font-size: 14px; }
+  .download-box { padding: 15px 10px; }
+  .download-box h3 { font-size: 16px; }
+  .download-box a img { height: 50px; }
+  .transport-card { width: 120px; font-size: 12px; padding: 8px; }
+}
